@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Calculator</title>
+  </head>
+  <body>
+    <div class="calc-container">
+      <div class="calc-header">
+        <h1 class="logo">Calc</h1>
+        <div class="theme-controller">
+          <p>THEME</p>
+          <div class="theme-signs">1 2 3</div>
+          <div class="theme-options">
+            <input
+              class="theme-option"
+              type="radio"
+              name="toggle"
+              id="theme1"
+            />
+            <input
+              class="theme-option"
+              type="radio"
+              name="toggle"
+              id="theme2"
+            />
+            <input
+              class="theme-option"
+              type="radio"
+              name="toggle"
+              id="theme3"
+            />
+          </div>
+        </div>
+      </div>
+
+      <form class="calc" action="" name="calculator">
+        <div class="calc-answer"><p>2000</p></div>
+
+        <div class="calc-keyboard">
+          <div class="keyboard-row row1">
+            <input type="button" value="7" />
+            <input type="button" value="8" />
+            <input type="button" value="9" />
+            <input class="button-text" type="button" value="DEL" />
+          </div>
+          <div class="keyboard-row row2">
+            <input type="button" value="4" />
+            <input type="button" value="5" />
+            <input type="button" value="6" />
+            <input type="button" value="+" />
+          </div>
+          <div class="keyboard-row row3">
+            <input type="button" value="1" />
+            <input type="button" value="2" />
+            <input type="button" value="3" />
+            <input type="button" value="-" />
+          </div>
+          <div class="keyboard-row row4">
+            <input type="button" value="." />
+            <input type="button" value="0" />
+            <input type="button" value="/" />
+            <input type="button" value="*" />
+          </div>
+          <div class="keyboard-row row5">
+            <input class="button-text" type="reset" value="RESET" />
+            <input class="button-submit" type="submit" value="=" />
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
