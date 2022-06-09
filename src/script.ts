@@ -14,12 +14,8 @@ const calculatorButtons = Array.from(
   document.getElementsByClassName("button-norm")
 ) as HTMLInputElement[];
 const resetButton = document.getElementById("reset") as HTMLInputElement;
+const deleteButton = document.getElementById("delete") as HTMLInputElement;
 const equalButton = document.getElementById("equal") as HTMLInputElement;
-
-// Theme controller
-themeButtons.forEach((themeBtn) => {
-  themeBtn.addEventListener("click", () => {});
-});
 
 let prevNum: number | null = null;
 let currNum: number | null = null;
@@ -30,13 +26,12 @@ let answer: number = 0;
 const displayCalculation = (button: HTMLInputElement): void => {
   const numKeyOn: boolean = button.className.includes("button-number");
   const operatorKeyOn: boolean = button.className.includes("button-operator");
+  const equalKeyOn: boolean = button.className.includes("button-submit");
 
   // click the num btn
   if (!currNum && numKeyOn) {
     calcAnswer.innerText = button.value;
   } else if (currNum && numKeyOn) {
-    prevOperator = currOperator;
-    currOperator = "";
     calcAnswer.innerText += button.value;
   }
   currNum = parseFloat(calcAnswer.innerText);
@@ -58,20 +53,22 @@ const displayCalculation = (button: HTMLInputElement): void => {
 
     prevNum = answer;
     currNum = null;
+  } else if (prevNum && !currNum && operatorKeyOn) {
+    calcProcess.innerText = prevNum.toString() + button.value;
+    calcAnswer.innerText = prevNum.toString();
   }
-};
 
-const deleteLastInput = (): void => {};
+  // click the equal button
+  if (currNum && currOperator && equalKeyOn) {
+    calculate(currOperator);
+    calcProcess.innerHTML =
+      prevNum?.toString() + currOperator + currNum.toString() + button.value;
+    calcAnswer.innerText = answer.toString();
 
-const resetCalc = (): void => {
-  prevNum = null;
-  currNum = null;
-  prevOperator = "";
-  currOperator = "";
-  answer = 0;
-
-  calcAnswer.innerText = answer.toString();
-  calcProcess.innerText = "";
+    prevNum = answer;
+    prevOperator = currOperator;
+    currOperator = "";
+  }
 };
 
 const calculate = (operator: string): number | undefined => {
@@ -90,6 +87,37 @@ const calculate = (operator: string): number | undefined => {
     }
 };
 
+const deleteLastNum = (): void => {
+  if (calcAnswer.innerText.length <= 1) {
+    calcAnswer.innerText = "0";
+    currNum = null;
+  } else {
+    const deletedNum = calcAnswer.innerText.slice(
+      0,
+      calcAnswer.innerText.length - 1
+    );
+
+    currNum = parseFloat(deletedNum);
+    calcAnswer.innerHTML = currNum.toString();
+  }
+};
+
+const resetCalc = (): void => {
+  prevNum = null;
+  currNum = null;
+  prevOperator = "";
+  currOperator = "";
+  answer = 0;
+
+  calcAnswer.innerText = answer.toString();
+  calcProcess.innerText = "";
+};
+
+// Theme controller
+themeButtons.forEach((themeBtn) => {
+  themeBtn.addEventListener("click", () => {});
+});
+
 calculatorButtons.forEach((btn) => {
   btn.addEventListener("click", (e: Event) => {
     e.preventDefault();
@@ -102,7 +130,7 @@ resetButton.addEventListener("click", (e: Event) => {
   resetCalc();
 });
 
-equalButton.addEventListener("click", () => {
-  prevOperator = currOperator;
-  calculate();
+deleteButton.addEventListener("click", (e: Event) => {
+  e.preventDefault;
+  deleteLastNum();
 });
