@@ -25,6 +25,21 @@ button,
   cursor: pointer;
 }
 
+/* Theme color */
+/* Theme1 */
+
+.calc-container.theme1 {
+  background-color: #3c4564;
+}
+
+.calc-container.theme2 {
+  background-color: #e6e6e6;
+}
+
+.cacl-container.theme3 {
+  background-color: #17062a;
+}
+
 /* Calculator */
 .calc-container {
   max-width: 800px;
@@ -101,17 +116,23 @@ button,
 }
 
 /* Calculator Answer */
-.calc-answer {
+.calc-answer-box {
   border: 1px solid black;
   border-radius: 0.5rem;
   height: 5rem;
 
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.calc-answer p {
+.calc-process {
+  margin: 0 1rem;
+  font-size: 12px;
+}
+
+.calc-answer {
   font-size: 2rem;
   font-weight: 500;
   margin: 0 1rem;

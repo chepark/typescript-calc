@@ -18,11 +18,11 @@
       <div class="calc-header">
         <h1 class="logo">Calc</h1>
         <div class="theme-controller">
-          <p>THEME</p>
-          <div class="theme-signs">1 2 3</div>
+          <p class="theme-text">THEME</p>
+          <div class="theme-signs theme-text">1 2 3</div>
           <div class="theme-options">
             <input
-              class="theme-option"
+              class="theme-option checked"
               type="radio"
               name="toggle"
               id="theme1"
@@ -44,32 +44,51 @@
       </div>
 
       <form class="calc" action="" name="calculator">
-        <div class="calc-answer"><p>2000</p></div>
+        <div class="calc-answer-box">
+          <div class="calc-process">2+3</div>
+          <div class="calc-answer">0</div>
+        </div>
 
         <div class="calc-keyboard">
           <div class="keyboard-row row1">
-            <input type="button" value="7" />
-            <input type="button" value="8" />
-            <input type="button" value="9" />
+            <input class="button-norm" type="button" value="7" />
+            <input class="button-norm" type="button" value="8" />
+            <input class="button-norm" type="button" value="9" />
             <input class="button-text" type="button" value="DEL" />
           </div>
           <div class="keyboard-row row2">
-            <input type="button" value="4" />
-            <input type="button" value="5" />
-            <input type="button" value="6" />
-            <input type="button" value="+" />
+            <input class="button-norm" type="button" value="4" />
+            <input class="button-norm" type="button" value="5" />
+            <input class="button-norm" type="button" value="6" />
+            <input
+              class="button-norm button-operator"
+              type="button"
+              value="+"
+            />
           </div>
           <div class="keyboard-row row3">
-            <input type="button" value="1" />
-            <input type="button" value="2" />
-            <input type="button" value="3" />
-            <input type="button" value="-" />
+            <input class="button-norm" type="button" value="1" />
+            <input class="button-norm" type="button" value="2" />
+            <input class="button-norm" type="button" value="3" />
+            <input
+              class="button-norm button-operator"
+              type="button"
+              value="-"
+            />
           </div>
           <div class="keyboard-row row4">
-            <input type="button" value="." />
-            <input type="button" value="0" />
-            <input type="button" value="/" />
-            <input type="button" value="*" />
+            <input class="button-norm" type="button" value="." />
+            <input class="button-norm" type="button" value="0" />
+            <input
+              class="button-norm button-operator"
+              type="button"
+              value="/"
+            />
+            <input
+              class="button-norm button-operator"
+              type="button"
+              value="*"
+            />
           </div>
           <div class="keyboard-row row5">
             <input class="button-text" type="reset" value="RESET" />
