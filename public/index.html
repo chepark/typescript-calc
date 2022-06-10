@@ -14,86 +14,161 @@
     <title>Calculator</title>
   </head>
   <body>
-    <div class="calc-container">
+    <div class="calc-container" data-theme="1">
       <div class="calc-header">
-        <h1 class="logo">Calc</h1>
+        <h1 class="logo text" data-theme="1">Calc</h1>
         <div class="theme-controller">
-          <p class="theme-text">THEME</p>
-          <div class="theme-signs theme-text">1 2 3</div>
-          <div class="theme-options">
+          <p class="theme-text text" data-theme="1">THEME</p>
+          <div class="theme-signs theme-text text" data-theme="1">1 2 3</div>
+          <div class="theme-options" data-theme="1">
             <input
               class="theme-option checked"
+              data-theme="1"
+              data-theme-value="1"
               type="radio"
               name="toggle"
-              id="theme1"
             />
             <input
               class="theme-option"
+              data-theme="1"
+              data-theme-value="2"
               type="radio"
               name="toggle"
-              id="theme2"
             />
             <input
               class="theme-option"
+              data-theme="1"
+              data-theme-value="3"
               type="radio"
               name="toggle"
-              id="theme3"
             />
           </div>
         </div>
       </div>
 
       <form class="calc" action="" name="calculator">
-        <div class="calc-answer-box">
+        <div class="calc-answer-box" data-theme="1">
           <div class="calc-process"></div>
           <div class="calc-answer">0</div>
         </div>
 
-        <div class="calc-keyboard">
+        <div class="calc-keyboard" data-theme="1">
           <div class="keyboard-row row1">
-            <input class="button-norm button-number" type="button" value="7" />
-            <input class="button-norm button-number" type="button" value="8" />
-            <input class="button-norm button-number" type="button" value="9" />
-            <input class="button-text" id="delete" type="button" value="DEL" />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="7"
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="8"
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="9"
+            />
+            <input
+              class="button-text"
+              data-theme="1"
+              id="delete"
+              type="button"
+              value="DEL"
+            />
           </div>
           <div class="keyboard-row row2">
-            <input class="button-norm button-number" type="button" value="4" />
-            <input class="button-norm button-number" type="button" value="5" />
-            <input class="button-norm button-number" type="button" value="6" />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="4"
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="5"
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="6"
+            />
             <input
               class="button-norm button-operator"
+              data-theme="1"
               type="button"
               value="+"
             />
           </div>
           <div class="keyboard-row row3">
-            <input class="button-norm button-number" type="button" value="1" />
-            <input class="button-norm button-number" type="button" value="2" />
-            <input class="button-norm button-number" type="button" value="3" />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="1"
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="2"
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="3"
+            />
             <input
               class="button-norm button-operator"
+              data-theme="1"
               type="button"
               value="-"
             />
           </div>
           <div class="keyboard-row row4">
-            <input class="button-norm button-number" type="button" value="." />
-            <input class="button-norm button-number" type="button" value="0" />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              type="button"
+              value="."
+            />
+            <input
+              class="button-norm button-number"
+              data-theme="1"
+              ype="button"
+              value="0"
+            />
             <input
               class="button-norm button-operator"
+              data-theme="1"
               type="button"
               value="/"
             />
             <input
               class="button-norm button-operator"
+              data-theme="1"
               type="button"
               value="*"
             />
           </div>
           <div class="keyboard-row row5">
-            <input class="button-text" id="reset" type="reset" value="RESET" />
+            <input
+              class="button-text"
+              data-theme="1"
+              id="reset"
+              type="reset"
+              value="RESET"
+            />
             <input
               class="button-norm button-submit"
+              data-theme="1"
               id="equal"
               type="submit"
               value="="

@@ -16,6 +16,9 @@ const calculatorButtons = Array.from(
 const resetButton = document.getElementById("reset") as HTMLInputElement;
 const deleteButton = document.getElementById("delete") as HTMLInputElement;
 const equalButton = document.getElementById("equal") as HTMLInputElement;
+const themedElements = Array.from(
+  document.querySelectorAll('[data-theme="1"]')
+) as HTMLElement[];
 
 let prevNum: number | null = null;
 let currNum: number | null = null;
@@ -113,11 +116,13 @@ const resetCalc = (): void => {
   calcProcess.innerText = "";
 };
 
-// Theme controller
-themeButtons.forEach((themeBtn) => {
-  themeBtn.addEventListener("click", () => {});
-});
+const changeThemeValue = (themeValue: string) => {
+  themedElements.forEach((elem) => {
+    elem.dataset.theme = themeValue;
+  });
+};
 
+// EventListeners
 calculatorButtons.forEach((btn) => {
   btn.addEventListener("click", (e: Event) => {
     e.preventDefault();
@@ -133,4 +138,12 @@ resetButton.addEventListener("click", (e: Event) => {
 deleteButton.addEventListener("click", (e: Event) => {
   e.preventDefault;
   deleteLastNum();
+});
+
+themeButtons.forEach((themeBtn) => {
+  themeBtn.addEventListener("click", () => {
+    const themeValue = themeBtn.dataset.themeValue;
+
+    changeThemeValue(themeValue!);
+  });
 });

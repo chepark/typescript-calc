@@ -11,6 +11,7 @@ const calculatorButtons = Array.from(document.getElementsByClassName("button-nor
 const resetButton = document.getElementById("reset");
 const deleteButton = document.getElementById("delete");
 const equalButton = document.getElementById("equal");
+const themedElements = Array.from(document.querySelectorAll('[data-theme="1"]'));
 let prevNum = null;
 let currNum = null;
 let prevOperator = "";
@@ -94,10 +95,12 @@ const resetCalc = () => {
     calcAnswer.innerText = answer.toString();
     calcProcess.innerText = "";
 };
-// Theme controller
-themeButtons.forEach((themeBtn) => {
-    themeBtn.addEventListener("click", () => { });
-});
+const changeThemeValue = (themeValue) => {
+    themedElements.forEach((elem) => {
+        elem.dataset.theme = themeValue;
+    });
+};
+// EventListeners
 calculatorButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
         e.preventDefault();
@@ -111,4 +114,10 @@ resetButton.addEventListener("click", (e) => {
 deleteButton.addEventListener("click", (e) => {
     e.preventDefault;
     deleteLastNum();
+});
+themeButtons.forEach((themeBtn) => {
+    themeBtn.addEventListener("click", () => {
+        const themeValue = themeBtn.dataset.themeValue;
+        changeThemeValue(themeValue);
+    });
 });
