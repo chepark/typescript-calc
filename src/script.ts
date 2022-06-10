@@ -140,10 +140,78 @@ deleteButton.addEventListener("click", (e: Event) => {
   deleteLastNum();
 });
 
-themeButtons.forEach((themeBtn) => {
+themeButtons.forEach((themeBtn: any) => {
   themeBtn.addEventListener("click", () => {
     const themeValue = themeBtn.dataset.themeValue;
-
     changeThemeValue(themeValue!);
+  });
+});
+
+const toggleBox = document.querySelector(".theme-options") as HTMLDivElement;
+// let notSelected: any = [];
+// toggleBox.addEventListener(
+//   "click",
+//   (e: Event) => {
+//     e.preventDefault();
+//     const selectedTheme = e.target;
+
+//     toggleBox.childNodes.forEach((elem) => {
+//       const toggle = elem as HTMLInputElement;
+
+//       if (elem === selectedTheme) {
+//         toggle.classList.add("checked");
+//         console.log("selected", toggle);
+//       } else {
+//         notSelected.push(toggle);
+//         console.log(notSelected);
+//       }
+//     });
+//   },
+//   { capture: true }
+// );
+
+// toggleBox.addEventListener("click", () => {
+//   console.log("box");
+// });
+const theme1 = document.querySelector("[data-theme-value='1']");
+const theme2 = document.querySelector("[data-theme-value='2']");
+const theme3 = document.querySelector("[data-theme-value='3']");
+
+theme1?.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const toggleButtons = [...toggleBox.children];
+  toggleButtons.forEach((btn) => {
+    if (btn == e.target) {
+      btn.classList.add("checked");
+    } else if (btn !== e.target) {
+      btn.classList.remove("checked");
+    }
+  });
+});
+
+theme2?.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const toggleButtons = [...toggleBox.children];
+  toggleButtons.forEach((btn) => {
+    if (btn == e.target) {
+      btn.classList.add("checked");
+    } else if (btn !== e.target) {
+      btn.classList.remove("checked");
+    }
+  });
+});
+
+theme3?.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  const toggleButtons = [...toggleBox.children];
+  toggleButtons.forEach((btn) => {
+    if (btn == e.target) {
+      btn.classList.add("checked");
+    } else if (btn !== e.target) {
+      btn.classList.remove("checked");
+    }
   });
 });

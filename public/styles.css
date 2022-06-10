@@ -77,21 +77,23 @@ div.calc-keyboard[data-theme="3"] {
   background-color: var(--theme3-btn-bg-color);
 }
 
-div.theme-option[data-theme="1"],
+input.theme-option.checked[data-theme="1"],
 input#equal[data-theme="1"] {
   background-color: var(--theme1-btn-accent-color);
   color: white;
 }
 
-div.theme-option[data-theme="2"],
+input.theme-option.checked[data-theme="2"],
 input#equal[data-theme="2"] {
   background-color: var(--theme2-btn-accent-color);
+  /* opacity: 1; */
   color: white;
 }
 
-div.theme-option[data-theme="3"],
+input.theme-option.checked[data-theme="3"],
 input#equal[data-theme="3"] {
   background-color: var(--theme3-btn-accent-color);
+  /* opacity: 1; */
   color: var(--theme3-bg-color);
 }
 
@@ -201,18 +203,21 @@ input.button-text[data-theme="3"] {
   height: 13px;
   width: 13px;
   appearance: none;
-  background-color: black;
   border-radius: 50%;
-  opacity: 0;
+  /* opacity: 0; */
 }
+
+/* .theme-option.checked[data-theme="1"] {
+  opacity: 1;
+} */
 
 .theme-option:hover {
   cursor: pointer;
 }
 
-[data-theme-value="1"] {
+/* [data-theme-value="1"] {
   opacity: 1;
-}
+} */
 
 /* Calculator Body */
 .calc {
