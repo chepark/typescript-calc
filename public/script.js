@@ -12,6 +12,9 @@ const resetButton = document.getElementById("reset");
 const deleteButton = document.getElementById("delete");
 const equalButton = document.getElementById("equal");
 const themedElements = Array.from(document.querySelectorAll('[data-theme="1"]'));
+const theme1 = document.querySelector("[data-theme-value='1']");
+const theme2 = document.querySelector("[data-theme-value='2']");
+const theme3 = document.querySelector("[data-theme-value='3']");
 let prevNum = null;
 let currNum = null;
 let prevOperator = "";
@@ -100,6 +103,18 @@ const changeThemeValue = (themeValue) => {
         elem.dataset.theme = themeValue;
     });
 };
+const editCheckedInClass = (e) => {
+    const toggleBox = document.querySelector(".theme-options");
+    const toggleButtons = [...toggleBox.children];
+    toggleButtons.forEach((btn) => {
+        if (btn == e.target) {
+            btn.classList.add("checked");
+        }
+        else if (btn !== e.target) {
+            btn.classList.remove("checked");
+        }
+    });
+};
 // EventListeners
 calculatorButtons.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -121,65 +136,15 @@ themeButtons.forEach((themeBtn) => {
         changeThemeValue(themeValue);
     });
 });
-const toggleBox = document.querySelector(".theme-options");
-// let notSelected: any = [];
-// toggleBox.addEventListener(
-//   "click",
-//   (e: Event) => {
-//     e.preventDefault();
-//     const selectedTheme = e.target;
-//     toggleBox.childNodes.forEach((elem) => {
-//       const toggle = elem as HTMLInputElement;
-//       if (elem === selectedTheme) {
-//         toggle.classList.add("checked");
-//         console.log("selected", toggle);
-//       } else {
-//         notSelected.push(toggle);
-//         console.log(notSelected);
-//       }
-//     });
-//   },
-//   { capture: true }
-// );
-// toggleBox.addEventListener("click", () => {
-//   console.log("box");
-// });
-const theme1 = document.querySelector("[data-theme-value='1']");
-const theme2 = document.querySelector("[data-theme-value='2']");
-const theme3 = document.querySelector("[data-theme-value='3']");
 theme1 === null || theme1 === void 0 ? void 0 : theme1.addEventListener("click", (e) => {
     e.preventDefault();
-    const toggleButtons = [...toggleBox.children];
-    toggleButtons.forEach((btn) => {
-        if (btn == e.target) {
-            btn.classList.add("checked");
-        }
-        else if (btn !== e.target) {
-            btn.classList.remove("checked");
-        }
-    });
+    editCheckedInClass(e);
 });
 theme2 === null || theme2 === void 0 ? void 0 : theme2.addEventListener("click", (e) => {
     e.preventDefault();
-    const toggleButtons = [...toggleBox.children];
-    toggleButtons.forEach((btn) => {
-        if (btn == e.target) {
-            btn.classList.add("checked");
-        }
-        else if (btn !== e.target) {
-            btn.classList.remove("checked");
-        }
-    });
+    editCheckedInClass(e);
 });
 theme3 === null || theme3 === void 0 ? void 0 : theme3.addEventListener("click", (e) => {
     e.preventDefault();
-    const toggleButtons = [...toggleBox.children];
-    toggleButtons.forEach((btn) => {
-        if (btn == e.target) {
-            btn.classList.add("checked");
-        }
-        else if (btn !== e.target) {
-            btn.classList.remove("checked");
-        }
-    });
+    editCheckedInClass(e);
 });
