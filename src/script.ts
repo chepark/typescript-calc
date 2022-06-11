@@ -130,7 +130,7 @@ const changeThemeValue = (themeValue: string): void => {
 const editCheckedInClass = (e: Event): void => {
   const toggleBox = document.querySelector(".theme-options") as HTMLDivElement;
 
-  const toggleButtons = [...toggleBox.children];
+  const toggleButtons: Element[] = [...toggleBox.children];
   toggleButtons.forEach((btn) => {
     if (btn == e.target) {
       btn.classList.add("checked");
