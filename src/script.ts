@@ -1,3 +1,4 @@
+// DOM Element
 const logo = <HTMLHeadingElement>document.querySelector(".logo");
 const calcContainer = <HTMLDivElement>document.querySelector(".calc-container");
 const calcAnswerBox = <HTMLDivElement>(
@@ -23,6 +24,7 @@ const theme1 = document.querySelector("[data-theme-value='1']");
 const theme2 = document.querySelector("[data-theme-value='2']");
 const theme3 = document.querySelector("[data-theme-value='3']");
 
+// Calculator public variables
 let prevNum: number | null = null;
 let currNum: number | null = null;
 let prevOperator: string = "";
@@ -119,7 +121,7 @@ const resetCalc = (): void => {
   calcProcess.innerText = "";
 };
 
-const changeThemeValue = (themeValue: string) => {
+const changeThemeValue = (themeValue: string): void => {
   themedElements.forEach((elem) => {
     elem.dataset.theme = themeValue;
   });
@@ -157,23 +159,24 @@ deleteButton.addEventListener("click", (e: Event) => {
 });
 
 themeButtons.forEach((themeBtn: any) => {
-  themeBtn.addEventListener("click", () => {
+  themeBtn.addEventListener("click", (e: Event) => {
+    e.preventDefault;
     const themeValue = themeBtn.dataset.themeValue;
     changeThemeValue(themeValue!);
   });
 });
 
-theme1?.addEventListener("click", (e) => {
+theme1?.addEventListener("click", (e: Event) => {
   e.preventDefault();
   editCheckedInClass(e);
 });
 
-theme2?.addEventListener("click", (e) => {
+theme2?.addEventListener("click", (e: Event) => {
   e.preventDefault();
   editCheckedInClass(e);
 });
 
-theme3?.addEventListener("click", (e) => {
+theme3?.addEventListener("click", (e: Event) => {
   e.preventDefault();
   editCheckedInClass(e);
 });
