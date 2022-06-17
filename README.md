@@ -1,3 +1,7 @@
+<p align="center">
+  <img width="530" height="350" src="./src/assets/calc-demo.gif">
+</p>
+
 #📌 Features
 
 - The app takes two operands and one operator to do calculation.
