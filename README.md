@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="530" height="350" src="./src/assets/calc-demo.gif">
+  <img width="530" height="auto" src="./src/assets/calc-demo.gif">
 </p>
 
 #📌 Features
