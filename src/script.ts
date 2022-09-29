@@ -50,7 +50,7 @@ const displayCalculation = (button: HTMLInputElement): void => {
     currNum = null;
     currOperator = button.value;
 
-    calcProcess.innerText = prevNum?.toString() + currOperator;
+    calcProcess.innerText = prevNum.toString() + currOperator;
   } else if (prevNum && currNum && operatorKeyOn) {
     prevOperator = currOperator;
     currOperator = button.value;
